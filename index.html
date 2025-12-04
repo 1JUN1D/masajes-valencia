@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masajista Valencia - Aura Vital | Masajes Profesionales y Terapéuticos</title>
+    <meta name="description" content="Masajista profesional en Valencia. Aura Vital ofrece masajes terapéuticos, relajantes, deportivos y spa. Agenda tu cita por WhatsApp. Bienestar y salud integral.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1e293b;
+            --primary-gold: #d4af37;
+            --pure-white: #ffffff;
+            --soft-gray: #f8fafc;
+            --text-gray: #64748b;
+            --text-dark: #334155;
+            --accent-light: rgba(212, 175, 55, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--primary-navy);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-navy);
+            border: 1px solid var(--primary-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-navy);
+            color: var(--pure-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), #e8bc58);
+            color: var(--primary-navy);
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Main Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Professional Image Container */
+        .hero-image {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--soft-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light), rgba(248, 250, 252, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--text-gray);
+            font-style: italic;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Services Sections - Premium Style */
+        .services-section {
+            padding: 6rem 0;
+        }
+
+        .service-premium {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .service-premium:nth-child(even) .service-content-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .service-premium:nth-child(odd) .service-content-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .service-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .service-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--soft-gray);
+            box-shadow: 0 25px 80px rgba(30, 41, 59, 0.15);
+        }
+
+        .service-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light), rgba(248, 250, 252, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2rem;
+            font-style: italic;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .service-description {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-highlight {
+            background: var(--pure-white);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
+        }
+
+        .service-highlight p {
+            color: var(--primary-navy);
+            font-weight: 500;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .experience-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-gold), #e8bc58);
+            color: var(--primary-navy);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            flex-direction: column;
+        }
+
+        .experience-badge span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+
+        .service-cta {
+            margin-top: 2.5rem;
+        }
+
+        .btn-service {
+            background: linear-gradient(135deg, var(--primary-navy), #334155);
+            color: var(--pure-white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.3);
+        }
+
+        .btn-service:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(30, 41, 59, 0.4);
+            background: linear-gradient(135deg, var(--primary-gold), #e8bc58);
+            color: var(--primary-navy);
+        }
+
+        /* Alternate layout for even sections */
+        .service-premium:nth-child(even) .service-content-grid {
+            direction: rtl;
+        }
+
+        .service-premium:nth-child(even) .service-content {
+            direction: ltr;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: var(--pure-white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        /* Map Container */
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(30, 41, 59, 0.1);
+            background: var(--soft-gray);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-style: italic;
+            background: linear-gradient(135deg, var(--accent-light), rgba(248, 250, 252, 0.8));
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--pure-white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 6rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            /* Mobile styles for premium services */
+            .service-content-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .service-premium:nth-child(even) .service-content-grid {
+                direction: ltr;
+            }
+
+            .service-image {
+                height: 300px;
+                order: 1;
+            }
+
+            .service-content {
+                order: 2;
+                padding: 1rem;
+            }
+
+            .service-content h2 {
+                font-size: 2rem;
+            }
+
+            .experience-badge {
+                width: 80px;
+                height: 80px;
+                font-size: 1.8rem;
+                bottom: -10px;
+                right: -10px;
+            }
+
+            .service-premium {
+                margin-bottom: 4rem;
+            }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Aura Vital Logo">
+                <span class="logo-text">Aura Vital</span>
+            </a>
+            <div class="nav-buttons">
+                <a href="catalogo-servicios.html" class="btn btn-outline">Catálogo de Servicios</a>
+                <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje" class="btn btn-primary">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Masajista Profesional en Valencia</h1>
+            <p class="hero-subtitle">
+                Experimenta el bienestar integral con nuestros masajes terapéuticos y relajantes. 
+                En Aura Vital transformamos tu salud y equilibrio interior a través de técnicas profesionales 
+                especializadas en cada tipo de necesidad.
+            </p>
+
+            <div class="hero-cta">
+                <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje" class="btn btn-primary btn-large">
+                    Agenda por WhatsApp
+                </a>
+                <a href="catalogo-servicios.html" class="btn btn-outline btn-large">
+                    Ver Catálogo Completo
+                </a>
+            </div>
+
+            
+    
+            
+        </div>
+
+
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <img src="imagen_principal.jpg" alt="Masajistas profesionales Aura Vital Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        
+
+    </main>
+
+    <!-- Premium Services Sections -->
+    <section class="services-section">
+        <!-- Spa de Día Service -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-image">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <img src="imagen0.jpg" alt="Masajistas profesionales Aura Vital Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="experience-badge">
+                        10+
+                        <span>años</span>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h2>Spa de Día en Valencia</h2>
+                    <p class="service-description">
+                        Descubre tu oasis personal en el corazón de Valencia. Nuestro spa de día está diseñado 
+                        para transportarte a un estado de relajación profunda, alejándote del bullicio urbano. 
+                        Cada rincón ha sido creado pensando en tu necesidad interior de paz y tranquilidad.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Ofrecemos una amplia variedad de experiencias: desde masajes en pareja hasta 
+                            terapias con piedras calientes que nuestros clientes describen como 
+                            "derretirse en la relajación total".
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="spa-de-dia-valencia.html" class="btn-service">Ver Servicios de Spa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Masajista Deportivo Service -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-content">
+                    <h2>Masajista Deportivo en Valencia</h2>
+                    <p class="service-description">
+                        Especialistas en recuperación muscular y prevención de lesiones deportivas. 
+                        Nuestros terapeutas entienden las demandas del cuerpo activo y proporcionan 
+                        tratamientos específicos para atletas y personas con estilo de vida dinámico.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Trabajamos con técnicas avanzadas de masaje deportivo y descontracturante, 
+                            diseñadas para optimizar tu rendimiento y acelerar la recuperación muscular.
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="masajista-deportivo-valencia.html" class="btn-service">Conocer Masajes Deportivos</a>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <img src="imagen1.jpg" alt="Masajistas profesionales Aura Vital Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Massage Spa Service -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-image">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <img src="imagen2.jpg" alt="Masajistas profesionales Aura Vital Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="service-content">
+                    <h2>Massage Spa en Valencia</h2>
+                    <p class="service-description">
+                        Tratamientos terapéuticos especializados que van más allá de la relajación. 
+                        Nuestro massage spa incluye drenaje linfático, masajes circulatorios y 
+                        terapias prenatales, brindando cuidado profesional para tu salud integral.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Cada tratamiento está diseñado para necesidades específicas de salud y bienestar, 
+                            combinando técnicas tradicionales con enfoques terapéuticos modernos.
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="massage-spa-valencia.html" class="btn-service">Explorar Tratamientos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2>Agenda Tu Cita</h2>
+                <p>
+                    Contáctanos para reservar tu sesión de masaje profesional en Valencia. 
+                    Estamos aquí para brindarte la mejor experiencia de relajación y bienestar.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>WhatsApp:</strong><br>
+                            <a href="https://wa.me/34613380082" style="color: var(--primary-gold); text-decoration: none;">+34 613 38 00 82</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Ubicación:</strong><br>
+                            Valencia, España
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <strong>Horarios:</strong><br>
+                            Lun - Sáb: 9:00 - 20:00
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje" class="btn btn-primary btn-large">
+                    Reservar Ahora
+                </a>
+            </div>
+            
+            <div class="map-container">
+                <!-- Aquí va tu iframe del mapa de Google Maps -->
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.8641440939077!2d-0.4033857884194276!3d39.47239777148864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f1a6b1213b9%3A0x4c810fb47955c08c!2sMasajes%20valencia%20%7C%20Aura%20Vital!5e0!3m2!1ses!2sco!4v1764880413198!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Aura Vital - Masajes Valencia</h3>
+            <p>Tu bienestar es nuestra prioridad. Masajes profesionales en Valencia.</p>
+            <p>&copy; 2025 Aura Vital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje" 
+        class="whatsapp-float">
+            <img src="whatsapp.png" alt="WhatsApp" 
+                style="width: 60%; height: 60%; object-fit: contain;">
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masajista Deportivo Valencia - Aura Vital | Recuperación Muscular Profesional</title>
+    <meta name="description" content="Masajista deportivo en Valencia. Especialistas en recuperación muscular, masajes descontracturantes y prevención de lesiones. Aura Vital - Optimiza tu rendimiento.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1e293b;
+            --primary-gold: #d4af37;
+            --pure-white: #ffffff;
+            --soft-gray: #f8fafc;
+            --text-gray: #64748b;
+            --text-dark: #334155;
+            --accent-light: rgba(212, 175, 55, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--primary-navy);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-navy);
+            border: 1px solid var(--primary-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-navy);
+            color: var(--pure-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), #e8bc58);
+            color: var(--primary-navy);
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--soft-gray);
+            padding: 1.5rem 0;
+            margin-top: 80px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .breadcrumbs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--primary-navy);
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-gray);
+            font-weight: 300;
+            margin: 0 0.5rem;
+        }
+
+        .breadcrumb-current {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--soft-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
+        }
+
+        /* Services Sections */
+        .services-section {
+            padding: 6rem 0;
+        }
+
+        .service-premium {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .service-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .service-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--soft-gray);
+            box-shadow: 0 25px 80px rgba(30, 41, 59, 0.15);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .service-description {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-highlight {
+            background: var(--pure-white);
+            border-left: 4px solid var(--primary-gold);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
+        }
+
+        .service-highlight p {
+            color: var(--primary-navy);
+            font-weight: 500;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .service-cta {
+            margin-top: 2.5rem;
+        }
+
+        .btn-service {
+            background: linear-gradient(135deg, var(--primary-navy), #334155);
+            color: var(--pure-white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.3);
+        }
+
+        .btn-service:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(30, 41, 59, 0.4);
+            background: linear-gradient(135deg, var(--primary-gold), #e8bc58);
+            color: var(--primary-navy);
+        }
+
+        /* Areas de Servicio Section */
+        .areas-section {
+            background: var(--soft-gray);
+            padding: 6rem 0;
+        }
+
+        .areas-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .areas-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-navy);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .area-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(30, 41, 59, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(30, 41, 59, 0.15);
+        }
+
+        .area-image {
+            height: 250px;
+            background: var(--soft-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-content {
+            padding: 2rem;
+        }
+
+        .area-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+
+        .area-neighborhoods {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Alternate layout for even sections */
+        .service-premium:nth-child(even) .service-content-grid {
+            direction: rtl;
+        }
+
+        .service-premium:nth-child(even) .service-content {
+            direction: ltr;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: var(--pure-white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 6rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-content-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .service-premium:nth-child(even) .service-content-grid {
+                direction: ltr;
+            }
+
+            .service-image {
+                height: 300px;
+                order: 1;
+            }
+
+            .service-content {
+                order: 2;
+                padding: 1rem;
+            }
+
+            .service-content h2 {
+                font-size: 2rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Aura Vital Logo">
+                <span class="logo-text">Aura Vital</span>
+            </a>
+            <div class="nav-buttons">
+                <a href="catalogo-servicios.html" class="btn btn-outline">Catálogo de Servicios</a>
+                <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje%20deportivo" class="btn btn-primary">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="breadcrumbs-container">
+            <a href="index.html" class="breadcrumb-link">Inicio</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Masajista Deportivo en Valencia</span>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Masajista Deportivo en Valencia</h1>
+            <p class="hero-subtitle">
+                Especialistas en recuperación muscular y optimización del rendimiento deportivo. Nuestros terapeutas 
+                especializados entienden las demandas del cuerpo activo y proporcionan tratamientos específicos 
+                para atletas y personas con estilo de vida dinámico en Valencia.
+            </p>
+
+            <div class="hero-cta">
+                <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje%20deportivo" class="btn btn-primary btn-large">
+                    Reservar Masaje Deportivo
+                </a>
+                <a href="catalogo-servicios.html" class="btn btn-outline btn-large">
+                    Ver Todos los Servicios
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="masajista-deportivo-valencia-hero.jpg" alt="Masajista deportivo Valencia - Aura Vital" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </main>
+
+    <!-- Services Sections -->
+    <section class="services-section">
+        <!-- Masaje Deportivo -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-image">
+                    <img src="masaje-deportivo-valencia.jpg" alt="Masaje deportivo Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h2>Masaje Deportivo en Valencia</h2>
+                    <p class="service-description">
+                        Nuestro masaje deportivo está diseñado específicamente para atletas y personas activas que 
+                        buscan optimizar su rendimiento físico. Utilizamos técnicas especializadas que mejoran la 
+                        flexibilidad, reducen el tiempo de recuperación y previenen lesiones deportivas.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Perfecto antes y después del entrenamiento. Nuestros terapeutas adaptan las técnicas 
+                            según tu deporte específico y tus objetivos de rendimiento.
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="masaje-deportivo-valencia.html" class="btn-service">Ver Masaje Deportivo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Masaje Descontracturante -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-content">
+                    <h2>Masaje Descontracturante en Valencia</h2>
+                    <p class="service-description">
+                        Especializado en liberar contracturas musculares y puntos de tensión profunda. Este masaje 
+                        terapéutico utiliza técnicas de presión específica para restaurar la movilidad muscular 
+                        y aliviar el dolor causado por sobrecargas físicas.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Ideal para tratar contracturas crónicas, rigidez muscular y dolores por sobreesfuerzo. 
+                            Devolvemos la funcionalidad completa a tus músculos.
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="masaje-descontracturante-valencia.html" class="btn-service">Ver Masaje Descontracturante</a>
+                    </div>
+                </div>
+                <div class="service-image">
+                    <img src="masaje-descontracturante-valencia.jpg" alt="Masaje descontracturante Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Masaje Pre y Postoperatorio -->
+        <div class="service-premium">
+            <div class="service-content-grid">
+                <div class="service-image">
+                    <img src="masaje-pre-postoperatorio-valencia.jpg" alt="Masaje pre y postoperatorio Valencia" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h2>Masaje Pre y Postoperatorio en Valencia</h2>
+                    <p class="service-description">
+                        Tratamientos especializados diseñados para preparar el cuerpo antes de cirugías y acelerar 
+                        la recuperación posterior. Nuestras técnicas mejoran la circulación, reducen la inflamación 
+                        y favorecen la cicatrización natural.
+                    </p>
+                    
+                    <div class="service-highlight">
+                        <p>
+                            Protocolos específicos adaptados a cada tipo de intervención. Trabajamos en coordinación 
+                            con profesionales médicos para optimizar tu proceso de recuperación.
+                        </p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="masaje-pre-postoperatorio-valencia.html" class="btn-service">Ver Masaje Pre y Postoperatorio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas de Servicio Section -->
+    <section class="areas-section">
+        <div class="areas-container">
+            <h2 class="areas-title">Áreas de Servicio</h2>
+            <div class="areas-grid">
+                <!-- Oliveret -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Oliveret</h3>
+                        <p class="area-neighborhoods">
+                            Atendemos Nou Moles, Soternes, Tres Forques, La Fuensanta y La Luz. Una zona en constante 
+                            crecimiento donde deportistas y personas activas encuentran los mejores tratamientos de recuperación muscular.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Patraix -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Patraix</h3>
+                        <p class="area-neighborhoods">
+                            Servicios disponibles en Patraix, San Isidro, Vara de Quart, Safranar y Favara. 
+                            Distrito familiar donde ofrecemos masajes deportivos para mejorar el rendimiento físico y prevenir lesiones.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jesús -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Jesús</h3>
+                        <p class="area-neighborhoods">
+                            Ofrecemos servicios en La Raiosa, L'Hort de Senabre, La Cruz Cubierta, San Marcelino y Camino Real. 
+                            Zona con gran actividad deportiva donde nuestros masajes especializados apoyan tu estilo de vida activo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quatre Carreres -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Quatre Carreres</h3>
+                        <p class="area-neighborhoods">
+                            Atendemos Monteolivete, En Corts, Malilla, Fuente de San Luis, Na Rovella, La Punta y Ciudad de las Artes y las Ciencias. 
+                            Distrito moderno donde combinamos técnicas tradicionales con enfoques deportivos innovadores.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Poblados Marítimos -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Poblados Marítimos</h3>
+                        <p class="area-neighborhoods">
+                            Servicios en El Grao, Cabañal-Cañamelar, Malvarrosa, Beteró y Nazaret. 
+                            Zona costera perfecta para deportistas acuáticos y corredores que necesitan recuperación muscular especializada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Caminos al Grao -->
+                <div class="area-card">
+                    <div class="area-content">
+                        <h3>Caminos al Grao</h3>
+                        <p class="area-neighborhoods">
+                            Disponible en Ayora, Albors, La Creu del Grau, Camí Fondo y Penya-Roja. 
+                            Área estratégica donde atletas y personas activas acceden fácilmente a nuestros servicios de masaje deportivo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Aura Vital - Masajista Deportivo Valencia</h3>
+            <p>Especialistas en recuperación muscular y optimización del rendimiento deportivo. Tu mejor versión atlética.</p>
+            <p>&copy; 2025 Aura Vital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34613380082?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20masaje%20deportivo" 
+        class="whatsapp-float">
+            <img src="whatsapp.png" alt="WhatsApp" 
+                style="width: 60%; height: 60%; object-fit: contain;">
+    </a>
+</body>
+</html>
