@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://masajesvalencia.dondeseria.com/sitemap.xml
